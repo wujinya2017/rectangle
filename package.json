@@ -1,0 +1,25 @@
+{
+  "name":"rectangle",
+  "version": "1.0.0",
+  "description": "计算矩形的面积和周长",
+  "main": "rectangle.js",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-eslint": "^22.0.0",
+    "grunt-htmlhint": "^0.9.13"
+  },
+  "scripts": {
+    "test": "grunt lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wujinya2017/rectangle.git"
+  },
+  "author": "wujinya2017",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wujinya2017/rectangle/issues"
+  },
+  "homepage": "https://github.com/wujinya2017/rectangle#readme"
+}
