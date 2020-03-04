@@ -1,4 +1,4 @@
-/* global $*/
+/* global Rectangle:true*/
 $(function(){
   var $width = $('#width'),
       $height = $('#height'),
@@ -8,10 +8,11 @@ $(function(){
   $btnCal.click(function(){
     var w = Number($width.val()),
         h = Number($height.val());
-    var p = 2*(w+h),
-        a = w*h;
-    $perimeter.val(roundFractional(p,2));
-    $area.val(roundFractional(a,2));
+
+    var r = new Rectangle(w,h);
+   
+    $perimeter.val(roundFractional(r.perimeter(),2));
+    $area.val(roundFractional(r.area(),2));
   });
 });
 
