@@ -12,6 +12,7 @@
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-eslint": "^22.0.0",
     "grunt-htmlhint": "^0.9.13",
+    "grunt-mocha": "^1.2.0",
     "mocha": "^7.1.0"
   },
   "scripts": {
