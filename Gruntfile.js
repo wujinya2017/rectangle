@@ -1,4 +1,3 @@
-/*global module:true */
 module.exports = function (grunt) {
   grunt.initConfig({
     eslint: {
@@ -44,11 +43,37 @@ module.exports = function (grunt) {
     uglify: {
       release:{
         files: {
-            'dist/rectangle.js': 'rectangle.js',
-            'dist/calc.js': 'calc.js'                            
+          'dist/rectangle.js': 'rectangle.js',
+          'dist/calc.js': 'calc.js'                            
         }
-      }         
+      } 
+    },      
+    eminPrepare: {
+      html: 'index.html',
+      options: {
+        dest: 'dist'
+      }
+    },
+    usemin: {
+      html: ['dist/index.html']
+    },
+    concat: {
+      options: {
+        separator: ';'
+      },
+      js: {
+        src: ['rectangle.js', 'calc.js'],
+        dest: 'dist/bundle.js'
+      }
+    },
+    clean: ['dist/bundle.js', '.tmp'],
+    copy: {
+      html: {
+        src: './index.html',
+        dest: './dist/index.html'
+      }
     }
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-csslint');
@@ -63,5 +88,11 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['mocha']);
   grunt.registerTask('default', ['htmlmin', 'cssmin', 'uglify']);
 
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-usemin');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
+  grunt.registerTask('default', ['copy', 'useminPrepare', 'concat', 'uglify', 'usemin', 'cssmin', 'htmlmin', 'clean']);
 };
+
