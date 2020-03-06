@@ -93,6 +93,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('default', ['copy','usemin', 'concat', 'uglify', 'usemin', 'cssmin', 'htmlmin', 'clean']);
+  grunt.registerTask('default', ['copy','concat', 'uglify', 'usemin', 'cssmin', 'htmlmin', 'clean']);
 };
 
