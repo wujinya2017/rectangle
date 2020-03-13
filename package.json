@@ -33,5 +33,8 @@
   },
   "homepage": "https://github.com/wujinya2017/rectangle#readme",
   "dependencies": {},
-  "keywords": []
+  "keywords": [],
+  "directories": {
+    "test": "test"
+  }
 }
