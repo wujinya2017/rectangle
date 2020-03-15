@@ -1,0 +1,1 @@
+function roundFractional(a,r){return Math.round(a*Math.pow(10,r))/Math.pow(10,r)}$(function(){var n=$("#width"),t=$("#height"),a=$("#calculate"),o=$("#perimeter"),c=$("#area");a.click(function(){var a=Number(n.val()),r=Number(t.val()),e=new Rectangle(a,r);o.val(roundFractional(e.perimeter(),2)),c.val(roundFractional(e.area(),2))})});
