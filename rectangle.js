@@ -15,6 +15,37 @@ $(function(){
   $forkMeGH.show('https://github.com/wujinya2017/rectangle');
   $bszPageFooter.show('html');
 
+  $width.keypress(function(e){
+    var pos = e.target.selectionStart,
+        con = e.target.value;
+
+    if(/[abcdf-zABCDF-Z`~!@#$%^&*()=_+[\]{}|;:'",<>/?\\]/.test(e.key)){
+      e.preventDefault();
+      return;
+    }
+      
+    if(e.key === 'e'){
+      if(pos ===0 || con.indexOf('e')!==-1 || con.indexOf('E')!==-1){
+        e.preventDefault();
+        return;
+      }
+      if(pos ===1 || con.substring(0,1) === '-'){
+        e.preventDefault();
+        return;
+      }
+    } 
+    
+  });
+
+  $height.keypress(function(e){
+
+    if(/[abcdf-zABCDF-Z`~!@#$%^&*()=_+[\]{}|;:'",<>/?\\]/.test(e.key)){
+      e.preventDefault();
+      return;
+    }
+   
+  });
+
   $width.focusout(function() {
     var result = validate($width.val());
     isPassValidate = result.isOK;
