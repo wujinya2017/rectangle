@@ -1,1 +1,1 @@
-function Rectangle(e,r){var n=Number(e),t=Number(r);this.area=function(){return n*t},this.perimeter=function(){return 2*(n+t)}}
+function Rectangle(e,r){var n=Number(e),t=Number(r);this.area=function(){return n*t},this.perimeter=function(){return 2*(n+t)}}function validate(e){var r={isOK:!1,reason:""};return""===e?r.reason="不能为空！":/^-?(0|[1-9]\d*)(\.\d*)?([eE][+-]?\d+)?$/.test(e)?Number(e)<0?r.reason="必须大于零":r.isOK=!0:r.reason="必须是数值",r}

@@ -18,6 +18,7 @@ module.exports = function (grunt) {
       },
       src: '*.html'
     },
+  /*
     mocha: {
       test: {
         src: ['test/index.html'],               
@@ -27,6 +28,7 @@ module.exports = function (grunt) {
         reporter: 'Spec'                      
       }      
     },
+  */
     htmlmin: {
       options: {
         collapseWhitespace: true,
@@ -38,22 +40,24 @@ module.exports = function (grunt) {
       }    
     },
     cssmin: {
-      'dist/rectangle.css': 'rectangle.css'            
+      'dist/rectangle.css': './rectangle.css'            
     },
     uglify: {
       release:{
         files: {
-          'dist/rectangle.js': 'rectangle.js',
-          'dist/calc.js': 'calc.js'                            
+          'dist/rectangle.js': './rectangle.js',
+          'dist/calc.js': './calc.js'                            
         }
       } 
-    },      
+    }, 
+    /*
     eminPrepare: {
       html: 'index.html',
       options: {
         dest: 'dist'
       }
     },
+    */
     usemin: {
       html: ['dist/index.html']
     },
@@ -66,7 +70,7 @@ module.exports = function (grunt) {
         dest: 'dist/bundle.js'
       }
     },
-    clean: ['dist/bundle.js', '.tmp'],
+   // clean: ['dist/bundle.js', '.tmp'],
     copy: {
       html: {
         src: './index.html',
@@ -85,7 +89,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('default', ['htmlhint', 'csslint', 'eslint']);
-  grunt.registerTask('default', ['mocha']);
   grunt.registerTask('default', ['htmlmin', 'cssmin', 'uglify']);
 
   grunt.loadNpmTasks('grunt-contrib-concat');
@@ -93,6 +96,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('default', ['copy','concat', 'uglify', 'usemin', 'cssmin', 'htmlmin', 'clean']);
+  grunt.registerTask('default', ['copy','concat', 'uglify', 'usemin', 'cssmin', 'htmlmin']);
 };
 
