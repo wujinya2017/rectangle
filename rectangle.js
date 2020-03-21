@@ -1,4 +1,4 @@
-/* global Rectangle,validate:true*/
+/* global Rectangle,validate:true,$,$forkMeGH,$bszPageFooter*/
 $(function(){
   var $width = $('#width'),
       $height = $('#height'),
@@ -10,7 +10,11 @@ $(function(){
       isPassValidate = false;
 
 
-  
+
+
+  $forkMeGH.show('https://github.com/wujinya2017/rectangle');
+  $bszPageFooter.show('html');
+
   $width.focusout(function() {
     var result = validate($width.val());
     isPassValidate = result.isOK;
